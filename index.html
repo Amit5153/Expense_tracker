@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Chart.js for chart visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    
+    
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    
+   
+
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+
+    <!-- Input fields for adding expenses -->
+    <input type="text" id="expense-name" placeholder="Expense Name">
+    <input type="number" id="expense-amount" placeholder="Expense Amount">
+    <input type="date" id="expense-date" placeholder="Expense Date">
+    <select id="expense-category">
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Health">Health</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Others">Others</option>
+    </select>
+    <button class="add-expense-btn">Add Expense</button>
+
+    <!-- Display total expenses -->
+    <h3>Total Expenses: $<span id="total-expenses">0</span></h3>
+
+    <!-- List to display expenses -->
+    <ul class="expense-list"></ul>
+
+    <!-- Filters for expense visualization -->
+    <h2>Filter Expenses</h2>
+    <input type="date" id="start-date" placeholder="Start Date">
+    <input type="date" id="end-date" placeholder="End Date">
+    <select id="filter-category">
+        <option value="All">All Categories</option>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Health">Health</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Others">Others</option>
+    </select>
+    <button id="filter-btn">Filter</button>
+
+    <!-- Canvas for charts -->
+    <div>
+        <h2>Expenses by Category</h2>
+        <canvas id="categoryChart"></canvas>
+    </div>
+    
+    <div>
+        <h2>Expenses Over Time</h2>
+        <canvas id="timeChart"></canvas>
+    </div>
+    <!-- Add these buttons below the Expense List in your HTML -->
+<div class="export-buttons">
+    <button class="export-btn" id="export-csv">Export CSV</button>
+    <button class="export-btn" id="export-json">Export JSON</button>
+    <button class="export-btn" id="export-pdf">Export PDF</button>
+</div>
+
+<div class="export-options">
+    <h3>Select Fields to Export:</h3>
+    <label><input type="checkbox" class="field-checkbox" value="name" checked> Name</label>
+    <label><input type="checkbox" class="field-checkbox" value="amount" checked> Amount</label>
+    <label><input type="checkbox" class="field-checkbox" value="category" checked> Category</label>
+    <label><input type="checkbox" class="field-checkbox" value="date" checked> Date</label>
+</div>
+
+    <!-- Include your JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

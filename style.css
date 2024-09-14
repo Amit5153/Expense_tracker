@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* General Styles */
+h1 {
+    text-align: center;
+    margin: 30px 0;
+    color: #333;
+    font-size: 2.5em;
+}
+
+/* Input and Button Styles */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 220px;
+    padding: 12px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+.add-expense-btn,
+#filter-btn {
+    padding: 12px 24px;
+    margin: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.add-expense-btn:hover,
+#filter-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Total Expenses Display */
+h3 {
+    text-align: center;
+    margin-top: 30px;
+    color: #444;
+    font-size: 1.8em;
+}
+
+#total-expenses {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Expense List Styles */
+.expense-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    margin: 15px 0;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid #007bff;
+}
+
+.expense-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.expense-item span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Delete Button Styles */
+.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Chart Container Styles */
+canvas {
+    max-width: 600px;
+    margin: 30px auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+        width: calc(100% - 40px);
+        margin: 8px 20px;
+    }
+
+    .expense-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .delete-btn {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+
+    .add-expense-btn,
+    #filter-btn {
+        width: calc(100% - 40px);
+        margin: 10px 20px;
+    }
+}
+.export-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.export-btn {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.export-btn:hover {
+    background-color: #218838;
+}
+.export-options {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.export-options label {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+
+
+
+/* Modal Header */
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Input Styles */
+.modal-content input[type="password"],
+.modal-content input[type="text"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
